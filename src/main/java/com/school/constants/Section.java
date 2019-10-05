@@ -5,6 +5,16 @@ import lombok.AllArgsConstructor;
 public enum Section {
   SECTIONA('A'),
   SECTIONB('B'),
-  SECTIONC('C');
-  char section;
+  SECTIONC('C'),
+  UNKNOWN('Z');
+
+  final char section;
+
+  public static Section getSection(int sec) {
+    for (Section sections : Section.values()) {
+      if (sections.section==sec) return sections;
+    }
+    return UNKNOWN;
+  }
+
 }
